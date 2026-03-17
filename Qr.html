@@ -2,20 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Print Full Page Image</title>
+    <title>Full Page Print</title>
+
     <style>
-        body, html {
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
         }
 
-        IMG {
+        img {
             width: 100%;
-            height:  ;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* fills entire page */
         }
 
+        /* Print settings */
         @media print {
             @page {
                 margin: 0;
@@ -25,17 +27,18 @@
                 margin: 0;
             }
 
-            IMG {
+            img {
                 width: 100vw;
                 height: 100vh;
             }
         }
     </style>
 </head>
-<body>
 
-<IMG SRC="trisha.jpg" alt="Full Page Image">
+<body onload="window.print()">
 
+    <!-- Make sure image is in same folder -->
+    <img src="trisha.jpg" alt="Full Page Image">
 
 </body>
 </html>
